@@ -1,0 +1,30 @@
+Feature to target: Search Jobs
+
+Tasks Overview:
+    1. Job cards
+    2. Filters
+    3. Infinite scroll
+    4. Responsive design
+
+Tech Stack allowed:
+    1. React
+    2. Redux
+    3. CSS
+    4. MUI
+
+Screen sizes:
+    1. above 768px
+    2. (504px, 768px]
+    3. upto 504px
+
+API:
+    1. Domain + endpoint - 'https://api.weekday.technology/adhoc/getSampleJdJSON'
+    2. method: POST
+    3. headers: 'Content-Type': 'application/json'
+    4. body: {
+            limit: 12,
+            offset: 0
+        } - indicates get first 10 jobs
+
+Improvements to original:
+    1. Fixed job filter section in Screen size 1 & 2, button appears for size 3 with filter and apply

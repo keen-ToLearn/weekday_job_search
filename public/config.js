@@ -1,0 +1,1 @@
+var baseURI = 'https://api.weekday.technology/'
