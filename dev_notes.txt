@@ -28,3 +28,12 @@ API:
 
 Improvements to original:
     1. Fixed job filter section in Screen size 1 & 2, button appears for size 3 with filter and apply
+
+Filter type:
+    1. Dropdown - Experience, Remote/On-site, Tech stack, Role, Min Salary
+    2. Plain input - Company name, Location
+    3. Tech Stack visible only when Role has been selected
+
+Commit:
+    1. Installing packages, Redux store setup
+    2. correct state set in reducer, config included in html, setup Role filter field

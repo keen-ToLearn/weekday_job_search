@@ -1,0 +1,39 @@
+.jobFilterBox {
+    display: flex;
+    padding-inline: 3%;
+}
+.filterItemBox {
+    display: flex;
+    flex-direction: column;
+}
+.filterLabel {
+    font-weight: 600;
+    font-size: 90%;
+}
+.filterLabelInvisible {
+    visibility: hidden;
+}
+.roleInputBox {
+    min-width: 12vw;
+}
+.roleListBox {
+    max-width: 26vw;
+}
+.optionItem {
+    text-transform: capitalize;
+    white-space: pre-wrap;
+}
+.optionItemAllUpper {
+    text-transform: uppercase;
+}
+.clearIcon {
+    font-size: 18px !important;
+}
+.chipClearIcon {
+    color: #1a3b57 !important;
+    font-weight: 600 !important;
+}
+.chipClearIcon:hover {
+    color: #fa3434 !important;
+    background-color: #ffe8d9 !important;
+}

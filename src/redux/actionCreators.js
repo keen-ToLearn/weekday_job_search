@@ -13,7 +13,7 @@ export const fetchJobs = range => dispatch => {
     })
         .then(response => {
             if(response.ok)
-                return response.json
+                return response.json()
             else {
                 let err = new Error(response.status + ':' + response.statusText)
                 err.response = response

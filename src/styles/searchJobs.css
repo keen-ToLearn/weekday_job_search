@@ -1,0 +1,16 @@
+.filterBox {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    padding-top: 1.2%;
+}
+.titleBox {
+    margin: 0 auto;
+    padding-bottom: 3px;
+    width: fit-content;
+    border-bottom: 1px solid #3522e2;
+}
+.titleBadgeText {
+    font-size: 18px;
+    padding-inline: 18px;
+}
