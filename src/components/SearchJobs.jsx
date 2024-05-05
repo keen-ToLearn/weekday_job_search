@@ -1,3 +1,4 @@
+import { FilterAlt } from '@mui/icons-material';
 import { Badge } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
@@ -19,6 +20,7 @@ const mapDispatchToProps = dispatch => ({
 })
 
 const SearchJobs = props => {
+    const [viewFilter, setViewFilter] = useState(true)
     const [jobFilters, setJobFilters] = useState({
         role: [],
         exp: '',
@@ -31,20 +33,18 @@ const SearchJobs = props => {
 
     const updateFilters = (key, value, applying) => {
         let update = value
-        console.log(update)
         if(!applying)
             update = [ ...jobFilters[key] ].filter(val => val !== update)
         if(applying && ['role', 'mode', 'tech'].includes(key))
             update = [ ...jobFilters[key], update ]
-        console.log(update)
-        setJobFilters({ ...jobFilters, [key]: update })
+        setJobFilters(jobFilters => ({ ...jobFilters, [key]: update }))
     }
 
     const resetFilter = key => {
         let update = ''
         if(['role', 'mode', 'tech'].includes(key))
             update = []
-        setJobFilters({ ...jobFilters, [key]: update })
+        setJobFilters(jobFilters => ({ ...jobFilters, [key]: update }))
     }
 
     // fetch jobs as per limit and offset
@@ -55,16 +55,19 @@ const SearchJobs = props => {
     useEffect(() => { triggerJobFetch(10, 0) }, [])
 
     return(
+        <>
         <div className='filterBox'>
             <div className='titleBox'>
                 <Badge badgeContent={props.count} max={props.count + 1} color='primary'>
                     <span className='titleBadgeText'>Search jobs</span>
                 </Badge>
+                <FilterAlt className='smallScreenFilterIcon' onClick={() => setViewFilter(!viewFilter)} />
             </div>
+            {viewFilter &&
             <JobFilters jobFilters={jobFilters} resetFilter={key => resetFilter(key)}
-                updateFilters={(key, value, applying) => updateFilters(key, value, applying)}/>
-            {JSON.stringify(jobFilters)}
+                updateFilters={(key, value, applying) => updateFilters(key, value, applying)}/>}
         </div>
+        </>
     )
 }
 

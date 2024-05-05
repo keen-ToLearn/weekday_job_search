@@ -37,3 +37,4 @@ Filter type:
 Commit:
     1. Installing packages, Redux store setup
     2. correct state set in reducer, config included in html, setup Role filter field
+    3. set all filters

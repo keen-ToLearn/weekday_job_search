@@ -1,20 +1,39 @@
 .jobFilterBox {
     display: flex;
+    flex-wrap: wrap;
     padding-inline: 3%;
+    padding-top: 0.4%;
+    padding-bottom: 0.8%;
 }
 .filterItemBox {
     display: flex;
     flex-direction: column;
+    margin-right: 8px;
 }
 .filterLabel {
+    margin-top: 8px;
     font-weight: 600;
-    font-size: 90%;
+    font-size: 85%;
 }
 .filterLabelInvisible {
+    margin-top: 8px;
+    font-size: 85%;
     visibility: hidden;
 }
 .roleInputBox {
     min-width: 12vw;
+}
+.expInputBox {
+    min-width: 16vw;
+}
+.locationInputBox {
+    max-width: 14vw;
+}
+.payInputBox {
+    min-width: 18vw;
+}
+.companyInputBox {
+    max-width: 18vw;
 }
 .roleListBox {
     max-width: 26vw;
@@ -36,4 +55,43 @@
 .chipClearIcon:hover {
     color: #fa3434 !important;
     background-color: #ffe8d9 !important;
+}
+
+@media only screen and (max-width: 504px) {
+    .jobFilterBox {
+        padding-bottom: 2%;
+    }
+    .roleInputBox {
+        min-width: 36vw;
+    }
+    .expInputBox {
+        min-width: 50vw;
+    }
+    .locationInputBox {
+        max-width: 40vw;
+    }
+    .payInputBox {
+        min-width: 60vw;
+    }
+    .companyInputBox {
+        max-width: 52vw;
+    }
+}
+
+@media only screen and (min-width: 504px) and (max-width: 768px) {
+    .roleInputBox {
+        min-width: 18vw;
+    }
+    .expInputBox {
+        min-width: 24vw;
+    }
+    .locationInputBox {
+        max-width: 20vw;
+    }
+    .payInputBox {
+        min-width: 30vw;
+    }
+    .companyInputBox {
+        max-width: 26vw;
+    }
 }
