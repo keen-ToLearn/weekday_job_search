@@ -23,7 +23,7 @@ export const fetchJobs = range => dispatch => {
         error => {
             throw new Error(error.message)
         })
-        .then(jobs => dispatch(addJobs(jobs)))
+        .then(jobs => dispatch(addJobs(jobs, range)))
         .catch(error => console.log(error.message))
 }
 
@@ -33,7 +33,7 @@ const jobsLoading = () => ({
 })
 
 // action creator for adding the fetched jobs
-const addJobs = jobs => ({
+const addJobs = (jobs, range) => ({
     type: actionTypes.ADD_JOBS,
-    payload: jobs
+    payload: { jobs, range }
 })

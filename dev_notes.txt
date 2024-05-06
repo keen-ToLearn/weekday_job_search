@@ -34,7 +34,12 @@ Filter type:
     2. Plain input - Company name, Location
     3. Tech Stack visible only when Role has been selected
 
+Expectations:
+    1. in-office mentioned if job.location is not mentioned in API response
+    2. Data unavailable for Posted X days before
+
 Commit:
     1. Installing packages, Redux store setup
     2. correct state set in reducer, config included in html, setup Role filter field
     3. set all filters
+    4. Jobs View, job fetch store correction, Responsiveness

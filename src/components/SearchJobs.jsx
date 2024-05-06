@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { fetchJobs } from '../redux/actionCreators';
 import '../styles/searchJobs.css';
 import JobFilters from './searchJobs/JobFilters';
+import JobsView from './searchJobs/JobsView';
 
 // makes redux store state available as props
 const mapStateToProps = state => {
@@ -30,6 +31,7 @@ const SearchJobs = props => {
         pay: '',
         company: ''
     })
+    const [jobOffset, setJobOffset] = useState(10)
 
     const updateFilters = (key, value, applying) => {
         let update = value
@@ -52,7 +54,20 @@ const SearchJobs = props => {
         props.fetchJobs({ limit, offset })
     }
 
+    const scrollPositionJobFetcher = () => {
+        // return if scroll has not reached bottom
+        if(Math.abs(document.documentElement.scrollHeight - document.documentElement.scrollTop - document.documentElement.clientHeight) > 1)
+            return
+        triggerJobFetch(10, jobOffset)
+        setJobOffset(jobOffset + 10)
+    }
+
     useEffect(() => { triggerJobFetch(10, 0) }, [])
+
+    useEffect(() => {
+        window.addEventListener('scroll', scrollPositionJobFetcher)
+        return () => window.removeEventListener('scroll', scrollPositionJobFetcher)
+    }, [props.loading])
 
     return(
         <>
@@ -67,6 +82,9 @@ const SearchJobs = props => {
             <JobFilters jobFilters={jobFilters} resetFilter={key => resetFilter(key)}
                 updateFilters={(key, value, applying) => updateFilters(key, value, applying)}/>}
         </div>
+        <JobsView jobFilters={jobFilters} jobs={props.jobs}/>
+        {props.loading &&
+        <div className='loadBox'><h2>Loading...</h2></div>}
         </>
     )
 }

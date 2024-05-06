@@ -1,0 +1,107 @@
+.jobsViewBox {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    padding-inline-start: 32px;
+    padding-inline-end: 16px;
+}
+.jobCardBox {
+    flex-grow: 1;
+    margin-bottom: 24px;
+    max-width: 30%;
+    padding: 1.4%;
+}
+.jobCard {
+    border-radius: 18px !important;
+    padding: 3%;
+}
+.jobIntroBox {
+    display: flex;
+    text-transform: capitalize;
+}
+.jobIcon {
+    width: 36px;
+    height: 36px;
+}
+.jobIconBox {
+    margin-right: 12px;
+}
+.noMargin {
+    margin: 0;
+}
+.jobCompany {
+    color: #8b8b8b;
+}
+.jobLocation {
+    font-weight: 700;
+    font-size: 80%;
+    margin-bottom: 10px;
+}
+.aboutBox {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    max-height: 45vh;
+    overflow: hidden;
+    position: relative;
+    font-size: 94%;
+}
+.seeMoreBox {
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    height: 10vh;
+    bottom: 0;
+    background: linear-gradient(#ffffff99, #ffffffee);
+}
+.seeText {
+    color: #3522e2;
+    cursor: pointer;
+}
+.applyButton {
+    border: 0;
+    border-radius: 8px;
+    background-color: #55efc4;
+    padding: 2.5%;
+    margin-top: 16px;
+    width: 100%;
+    cursor: pointer;
+}
+.applyButtonBody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttonText {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a3b57;
+}
+.applyIconBox {
+    margin-right: 6px;
+}
+.referButton {
+    background-color: #4943da;
+    margin-top: 10px;
+}
+.referText {
+    font-weight: 500;
+    color: #ffffff;
+    margin-left: 2px;
+}
+.loadBox {
+    text-align: center;
+}
+
+@media only screen and (max-width: 504px) {
+    .jobCardBox {
+        max-width: 94%;
+    }
+}
+
+@media only screen and (min-width: 504px) and (max-width: 768px) {
+    .jobCardBox {
+        max-width: 46%;
+    }
+}
